@@ -1,5 +1,6 @@
 package com.example.yourway;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
     private ArrayList<Note> listOfNotes;
@@ -35,7 +37,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return listOfNotes.size();
+        if(listOfNotes==null){
+            return 0;
+        }
+        else{
+            return listOfNotes.size();
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{

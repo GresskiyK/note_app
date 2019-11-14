@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4A5AAFFD"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <ImageView
@@ -35,10 +35,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#419B9595"
+        android:background="#790E1116"
         android:fontFamily="sans-serif-light"
         android:onClick="registrateFormOpen"
+        android:padding="10dp"
         android:text="Sign up"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

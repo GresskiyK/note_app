@@ -11,31 +11,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
-    private ArrayList<Note> notes=new ArrayList<>();
+
     private RecyclerView recyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         recyclerView=findViewById(R.id.recyclerView);
-        notes.add(new Note("jhjjhghhfhgfhgfgfdfdfdfff","Игра в 12.00"));
-        notes.add(new Note("Волейбол","Игра в 12.00"));
-        notes.add(new Note("Волейбол","Игра в 12.00"));
-        notes.add(new Note("Волейбол","Игра в 12.00"));
-        notes.add(new Note("Волейбол","Игра в 12.00"));
-        notes.add(new Note("Волейбол","Игра в 12.00"));
+        Note note=new Note();
+        Bundle b=getIntent().getExtras();
 
-        NotesAdapter adapter=new NotesAdapter(notes);
+        if(b!=null){
+
+            note.getListOfNotes().add(new Note(b.getString("title"),b.getString("body")));
+
+        }
+
+
+        NotesAdapter adapter=new NotesAdapter(note.getListOfNotes());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
-
-
     }
 
-
-    public void createNote(View view) {
+    public void moveToCreatingNoteForm(View view) {
         Intent intent = new Intent(MenuActivity.this, CreatingNoteForm.class);
         startActivity(intent);
     }
