@@ -1,6 +1,9 @@
 package com.example.yourway;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,4 +35,8 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
+    public void createNote(View view) {
+        Intent intent = new Intent(MenuActivity.this, CreatingNoteForm.class);
+        startActivity(intent);
+    }
 }
