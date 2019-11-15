@@ -14,23 +14,20 @@ public class MenuActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         recyclerView=findViewById(R.id.recyclerView);
-        Note note=new Note();
         Bundle b=getIntent().getExtras();
 
         if(b!=null){
-
-            note.getListOfNotes().add(new Note(b.getString("title"),b.getString("body")));
-
+            String title=b.getString("title");
+            String body=b.getString("body");
+            Note.getListOfNotes().add(new Note(title,body));
         }
 
-
-        NotesAdapter adapter=new NotesAdapter(note.getListOfNotes());
+        NotesAdapter adapter=new NotesAdapter(Note.getListOfNotes());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }

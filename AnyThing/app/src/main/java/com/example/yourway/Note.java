@@ -3,7 +3,7 @@ package com.example.yourway;
 import java.util.ArrayList;
 
 public class Note {
-    private ArrayList<Note> listOfNotes;
+    private static ArrayList<Note> listOfNotes=new ArrayList<>();
     private String title;
     private String body;
 
@@ -16,7 +16,7 @@ public class Note {
         return body;
     }
 
-    public ArrayList<Note> getListOfNotes(){
+    public static ArrayList<Note> getListOfNotes(){
         return listOfNotes;
     }
 
@@ -29,7 +29,7 @@ public class Note {
 
     }
 
-    public void addNote(String title,String body){
+    public static void addNote(String title,String body){
         listOfNotes.add(new Note(title,body));
     }
 
