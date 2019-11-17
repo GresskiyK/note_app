@@ -12,6 +12,8 @@ import java.io.Serializable;
 public class CreatingNoteForm extends AppCompatActivity {
     private EditText editTitle;
     private EditText editBody;
+    private  String title;
+    private String body;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +31,27 @@ public class CreatingNoteForm extends AppCompatActivity {
     public void addNote(View view) {
 
         Intent intent=new Intent(CreatingNoteForm.this,MenuActivity.class);
-        intent.putExtra("title",editTitle.getText().toString());
-        intent.putExtra("body",editBody.getText().toString());
+
+        if (checkNote()){
+            intent.putExtra("title",title);
+            intent.putExtra("body",body);
+        }
+
+
 
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
+    private boolean checkNote(){
+        boolean result = false;
+        if (!(editTitle.getText().toString().trim().equals("")&(editBody.getText().toString().trim().equals("")))){
+            title = editTitle.getText().toString();
+            body = editBody.getText().toString();
+            result = true;
+        }
+        return result;
     }
 }

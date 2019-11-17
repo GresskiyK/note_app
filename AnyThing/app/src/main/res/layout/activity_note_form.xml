@@ -16,9 +16,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif-black"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-light"
+            android:maxLines="1"
             android:text="Заголовок"
-            android:textSize="20sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <TextView
@@ -29,6 +31,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="10dp"
             android:text="Описание"
-            android:textSize="16sp" />
+            android:maxLines="1"
+            android:textSize="20sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
