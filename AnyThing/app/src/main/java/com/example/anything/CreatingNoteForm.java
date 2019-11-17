@@ -1,4 +1,4 @@
-package com.example.yourway;
+package com.example.anything;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import java.io.Serializable;
+import com.example.anything.R;
 
 public class CreatingNoteForm extends AppCompatActivity {
     private EditText editTitle;

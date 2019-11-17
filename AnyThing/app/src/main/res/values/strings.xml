@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">YourWay</string>
+    <string name="app_name">AnyThing</string>
     <string name="registration">Регистрация</string>
     <string name="enter_login">Введите ваш логин</string>
     <string name="enter_password">Введите пароль</string>

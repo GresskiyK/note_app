@@ -1,4 +1,4 @@
-package com.example.yourway;
+package com.example.anything;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.anything.R;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -37,7 +37,8 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
+            Intent intent=new Intent(this,Registration.class);
+            startActivity(intent);
     }
 
 

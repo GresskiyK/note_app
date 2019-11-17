@@ -1,4 +1,4 @@
-package com.example.yourway;
+package com.example.anything;
 
 public class PersonData {
     private String login;

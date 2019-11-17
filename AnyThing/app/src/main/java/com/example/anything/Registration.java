@@ -1,4 +1,4 @@
-package com.example.yourway;
+package com.example.anything;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.anything.R;
 
 public class Registration extends AppCompatActivity {
     private EditText editName;
@@ -70,5 +72,10 @@ public class Registration extends AppCompatActivity {
             startActivity(intent);
 
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

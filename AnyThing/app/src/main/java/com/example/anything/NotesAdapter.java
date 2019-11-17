@@ -1,6 +1,5 @@
-package com.example.yourway;
+package com.example.anything;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +7,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.anything.R;
+
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
     private ArrayList<Note> listOfNotes;

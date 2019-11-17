@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00FFFFFF"
-    tools:context=".CreatingNoteForm">
+    tools:context="com.example.anything.CreatingNoteForm">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -74,7 +74,7 @@
             android:layout_marginTop="20dp"
             android:backgroundTint="#009E8585"
             android:hint="Название"
-            android:inputType="textPersonName"
+            android:inputType="textMultiLine"
             android:textSize="24sp" />
 
         <EditText
@@ -85,7 +85,7 @@
             android:backgroundTint="#007C1D1D"
             android:ems="10"
             android:hint="Текст"
-            android:inputType="textPersonName" />
+            android:inputType="textMultiLine" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

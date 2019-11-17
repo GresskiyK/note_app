@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Registration">
+    tools:context="com.example.anything.Registration">
 
     <EditText
         android:id="@+id/editTextPasswordCheck"
@@ -83,12 +83,12 @@
         android:id="@+id/buttonRegistr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#790E1116"
         android:fontFamily="sans-serif-light"
         android:onClick="buttonGetData"
         android:padding="10dp"
         android:text="Registrate"
         android:textColor="#FFFFFF"
+        style="@style/MyStyleButton"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
