@@ -46,6 +46,7 @@
         android:padding="10dp"
         android:textSize="24sp"
         android:text="Sign in"
+        android:onClick="signInFormOpen"
         android:fontFamily="sans-serif-light"
         android:textColor="@color/white"
         style="@style/MyStyleButton"

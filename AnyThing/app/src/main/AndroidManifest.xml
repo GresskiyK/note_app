@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name="com.example.anything.CreatingNoteForm"></activity>
+        <activity android:name=".LogIn"></activity>
+        <activity android:name=".CreatingNoteForm" />
         <activity
-            android:name="com.example.anything.MenuActivity"
+            android:name=".MenuActivity"
             android:label="@string/title_activity_menu" />
-        <activity android:name="com.example.anything.Registration" />
-        <activity android:name="com.example.anything.MainActivity">
+        <activity android:name=".Registration" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
