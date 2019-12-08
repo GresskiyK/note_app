@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">AnyThing</string>
-    <string name="registration">Регистрация</string>
-    <string name="enter_login">Введите ваш логин</string>
-    <string name="enter_password">Введите пароль</string>
-    <string name="repeat_password">Повторите введённый пароль</string>
-    <string name="enter_email">Введите ваш email</string>
-    <string name="button_registrate">Зарегистрироваться</string>
+    <string name="registration">Registration</string>
+    <string name="enter_login">Enter your login</string>
+    <string name="enter_password">Enter password</string>
+    <string name="repeat_password">Repeat email</string>
+    <string name="enter_email">Enter email</string>
+    <string name="button_registrate">Registrate</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

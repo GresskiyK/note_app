@@ -5,13 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardElevation="5dp">
+    app:cardElevation="5dp"
+    app:contentPaddingBottom="2dp"
+    app:contentPaddingLeft="2dp"
+    app:contentPaddingRight="2dp"
+    app:contentPaddingTop="2dp">
 
 
     <LinearLayout
+        style="@style/CornersForLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/titleOfNote"

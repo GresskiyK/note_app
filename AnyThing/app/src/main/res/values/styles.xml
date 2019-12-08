@@ -14,11 +14,15 @@
         <item name="contentPaddingTop">15dp</item>
         <item name="contentPaddingLeft">18dp</item>
         <item name="contentPaddingRight">18dp</item>
-        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardBackgroundColor">@color/green</item>
     </style>
 
     <style name="MyStyleButton">
         <item name="android:background">@drawable/button_main</item>
+    </style>
+
+    <style name="CornersForLayout">
+        <item name="android:background">@drawable/coreners_for_layout</item>
     </style>
 
 

@@ -53,20 +53,20 @@ public class Registration extends AppCompatActivity {
             alert.show();
 
         }
-//        else if(!data.getEmailValid()){
-//            AlertDialog.Builder builder = new AlertDialog.Builder(Registration.this);
-//            builder.setTitle("Оповещение")
-//                    .setMessage("Проверьте корректность введенного Email")
-//                    .setCancelable(false)
-//                    .setNegativeButton("ОК",
-//                            new DialogInterface.OnClickListener() {
-//                                public void onClick(DialogInterface dialog, int id) {
-//                                    dialog.cancel();
-//                                }
-//                            });
-//            AlertDialog alert = builder.create();
-//            alert.show();
-//        }
+        else if(!data.getEmailValid()){
+            AlertDialog.Builder builder = new AlertDialog.Builder(Registration.this);
+            builder.setTitle("Оповещение")
+                    .setMessage("Проверьте корректность введенного Email")
+                    .setCancelable(false)
+                    .setNegativeButton("ОК",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
         else{
             Intent intent = new Intent(Registration.this, MenuActivity.class);
             startActivity(intent);

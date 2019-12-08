@@ -26,7 +26,7 @@ public class DownloadData {
 
         String request= input;
         // айпи компютера!
-        String result ="http://192.168.1.46:5000/"+request;
+        String result ="http://192.168.25.55:5000/"+request;
         DownloadJSON json = new DownloadJSON(onGetData);
         json.execute(result);
     }

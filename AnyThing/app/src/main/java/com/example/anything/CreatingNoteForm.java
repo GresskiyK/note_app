@@ -23,7 +23,7 @@ public class CreatingNoteForm extends AppCompatActivity implements OnGetData {
         setContentView(R.layout.activity_creating_note_form);
         editTitle=findViewById(R.id.editTitle);
         editBody=findViewById(R.id.editBody);
-        textView=findViewById(R.id.textView4);
+        //textView=findViewById(R.id.textView4);
     }
 
     public void back_to_menu(View view) {
@@ -33,19 +33,19 @@ public class CreatingNoteForm extends AppCompatActivity implements OnGetData {
 
     public void addNote(View view) {
 
-//        Intent intent=new Intent(CreatingNoteForm.this,MenuActivity.class);
-//
-//        if (checkNote()){
-//            intent.putExtra("title",title);
-//            intent.putExtra("body",body);
-//        }
-//
-//
-//
-//        startActivity(intent);
-        String text=editTitle.getText().toString();
-        DownloadData data = new DownloadData(this);
-        data.CreateUrl(text);
+        Intent intent=new Intent(CreatingNoteForm.this,MenuActivity.class);
+
+        if (checkNote()){
+            intent.putExtra("title",title);
+            intent.putExtra("body",body);
+        }
+
+
+
+        startActivity(intent);
+//        String text=editTitle.getText().toString();
+//        DownloadData data = new DownloadData(this);
+//        data.CreateUrl(text);
     }
 
     @Override
