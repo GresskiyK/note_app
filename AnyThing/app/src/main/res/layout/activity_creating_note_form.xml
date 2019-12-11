@@ -36,10 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
+        android:typeface="normal"
         android:text="New Note"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:typeface="normal"
+
         app:layout_constraintBottom_toTopOf="@+id/linear"
         app:layout_constraintEnd_toStartOf="@+id/imageButton2"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
@@ -59,20 +60,23 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_bottom"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="@+id/constraint"
         app:layout_constraintLeft_toLeftOf="@+id/constraint"
-        app:layout_constraintRight_toRightOf="@+id/constraint"/>
+        app:layout_constraintRight_toRightOf="@+id/constraint">
+
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@id/toolbar_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,10 +108,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
         app:srcCompat="@drawable/three_dots"
-        android:layout_marginRight="12dp"
+        android:onClick="openBottomSheet"
+        android:paddingBottom="14dp"
+        android:paddingRight="12dp"
+        android:paddingLeft="8dp"
         app:layout_constraintTop_toTopOf="@id/toolbar_bottom"
         app:layout_constraintBottom_toBottomOf="@id/toolbar_bottom"
         app:layout_constraintRight_toRightOf="@id/toolbar_bottom"/>
