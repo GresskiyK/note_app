@@ -25,9 +25,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class MenuActivity extends AppCompatActivity {
-
     Note note = new Note();
-
     RecyclerView recyclerView;
     TextView textView;
     @Override
@@ -36,9 +34,9 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         recyclerView = findViewById(R.id.recyclerView);
         textView=findViewById(R.id.textViewTitle);
+
         Query queryForNotes = RetrofitClass.getNotes().create(Query.class);
         Call<List<Note>> call = queryForNotes.getNotes();
-
         call.enqueue(new Callback<List<Note>>() {
             @Override
             public void onResponse(Call<List<Note>> call, Response<List<Note>> response) {
@@ -67,11 +65,7 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
-
     }
-
-
-
 
     public void moveToCreatingNoteForm(View view) {
         Intent intent = new Intent(MenuActivity.this, CreatingNoteForm.class);

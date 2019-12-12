@@ -7,12 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.anything.R;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
@@ -38,17 +33,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         TextView title=holder.itemView.findViewById(R.id.titleOfNote);
         TextView body=holder.itemView.findViewById(R.id.bodyOfNote);
-//        CardView cardView=holder.itemView.findViewById(R.id.cardView);
-//
-//            switch(listOfNotes.get(position).getColorId()){
-//            case 1:
-//                cardView.setCardBackgroundColor(Color.RED);
-//            case 2:
-//                cardView.setCardBackgroundColor(Color.YELLOW);
-//            case 3:
-//                cardView.setCardBackgroundColor(Color.GREEN);
-//
-//        }
 
         title.setText(listOfNotes.get(position).getTitle());
         body.setText(listOfNotes.get(position).getBody());

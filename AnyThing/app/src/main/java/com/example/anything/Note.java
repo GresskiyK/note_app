@@ -11,9 +11,9 @@ import retrofit2.Response;
 
 public class Note {
     private List<Note> listOfNotes=new ArrayList<>();
-    @SerializedName(value="email")
+    @SerializedName(value="title")
     private String title;
-    @SerializedName(value="name")
+    @SerializedName(value="body")
     private String body;
 
     public String getTitle() {
