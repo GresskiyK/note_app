@@ -58,12 +58,12 @@ public class CreatingNoteForm extends AppCompatActivity implements OnGetData {
 //            default: colorId = 0;
 //                break;
 //        }
-
-        if (checkNote()){
-            Note note=new Note(title,body);
-            intent.putExtra(Note.class.getSimpleName(),note);
-        }
-        startActivity(intent);
+//
+//        if (checkNote()){
+//            Note note=new Note(title,body);
+//            intent.putExtra(Note.class.getSimpleName(),note);
+//        }
+//        startActivity(intent);
     }
 
     @Override

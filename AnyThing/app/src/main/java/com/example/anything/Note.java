@@ -1,28 +1,26 @@
 package com.example.anything;
 
-import java.io.Serializable;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
+import java.util.List;
 
-public class Note implements Serializable {
-    private static ArrayList<Note> listOfNotes=new ArrayList<>();
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class Note {
+    private List<Note> listOfNotes=new ArrayList<>();
+    @SerializedName(value="email")
     private String title;
+    @SerializedName(value="name")
     private String body;
-//    private int colorId;
-
 
     public String getTitle() {
         return title;
     }
     public String getBody() {
         return body;
-    }
-
-//    public int getColorId() {
-//        return colorId;
-//    }
-
-    public ArrayList<Note> getListOfNotes(){
-        return listOfNotes;
     }
 
     public Note(String title,String body){
@@ -41,4 +39,13 @@ public class Note implements Serializable {
         listOfNotes.remove(position);
     }
 
+    public void getData(){}
+
+    public List<Note> getListOfNotes() {
+        return listOfNotes;
+    }
+
+    public void setListOfNotes(List<Note> listOfNotes) {
+        this.listOfNotes = listOfNotes;
+    }
 }
