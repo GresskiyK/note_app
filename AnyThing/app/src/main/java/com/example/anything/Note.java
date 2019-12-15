@@ -15,6 +15,9 @@ public class Note {
     private String title;
     @SerializedName(value="body")
     private String body;
+    @SerializedName(value="colorId")
+    private int colorId;
+
 
     public String getTitle() {
         return title;
@@ -22,6 +25,7 @@ public class Note {
     public String getBody() {
         return body;
     }
+
 
     public Note(String title,String body){
         this.title=title;
@@ -47,5 +51,10 @@ public class Note {
 
     public void setListOfNotes(List<Note> listOfNotes) {
         this.listOfNotes = listOfNotes;
+    }
+
+
+    public int getColorId() {
+        return colorId;
     }
 }

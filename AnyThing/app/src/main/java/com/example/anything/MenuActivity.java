@@ -35,7 +35,7 @@ public class MenuActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         textView=findViewById(R.id.textViewTitle);
 
-        Query queryForNotes = RetrofitClass.getNotes().create(Query.class);
+        Query queryForNotes = RetrofitClass.getData().create(Query.class);
         Call<List<Note>> call = queryForNotes.getNotes();
         call.enqueue(new Callback<List<Note>>() {
             @Override

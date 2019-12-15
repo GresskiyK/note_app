@@ -10,7 +10,7 @@ public class RetrofitClass {
     private static final String BASE_URL="http://192.168.1.46:5000";
     private static Retrofit retrofit=null;
 
-    public static Retrofit getNotes(){
+    public static Retrofit getData(){
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();

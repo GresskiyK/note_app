@@ -15,7 +15,7 @@ import com.example.anything.R;
 
 import java.io.Serializable;
 
-public class CreatingNoteForm extends AppCompatActivity implements OnGetData {
+public class CreatingNoteForm extends AppCompatActivity{
     private EditText editTitle;
     private EditText editBody;
     private  String title;
@@ -24,7 +24,6 @@ public class CreatingNoteForm extends AppCompatActivity implements OnGetData {
     private RadioButton radioButton1;
     private RadioGroup radioButton2;
     private RadioGroup radioButton3;
-    private BottomSheetDialog sheetDialog;
     private int radioButtonId;
     private int colorId;
 
@@ -42,8 +41,6 @@ public class CreatingNoteForm extends AppCompatActivity implements OnGetData {
     }
 
     public void addNote(View view) {
-
-        Intent intent=new Intent(CreatingNoteForm.this,MenuActivity.class);
 
 //        switch(colorId) {
 //            case 1:
@@ -63,15 +60,11 @@ public class CreatingNoteForm extends AppCompatActivity implements OnGetData {
 //            Note note=new Note(title,body);
 //            intent.putExtra(Note.class.getSimpleName(),note);
 //        }
-//        startActivity(intent);
     }
 
     @Override
-    public void onDataGetListener(String s) {}
+    public void onBackPressed() {}
 
-    @Override
-    public void onBackPressed() {
-    }
     private boolean checkNote(){
         boolean result = false;
         if (!(editTitle.getText().toString().trim().equals("")&(editBody.getText().toString().trim().equals("")))){
@@ -80,10 +73,5 @@ public class CreatingNoteForm extends AppCompatActivity implements OnGetData {
             result = true;
         }
         return result;
-    }
-
-    public void openBottomSheet(View view) {
-        BottomSheetDialog sheetDialog=new BottomSheetDialog();
-        sheetDialog.show(getSupportFragmentManager(),"bottom sheet");
     }
 }

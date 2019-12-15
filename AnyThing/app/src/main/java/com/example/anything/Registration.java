@@ -6,16 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-
-import com.example.anything.R;
+import android.widget.TextView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Registration extends AppCompatActivity {
     private EditText editName;
     private EditText editPassword;
     private EditText passwordCheck;
     private EditText editEmail;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +32,15 @@ public class Registration extends AppCompatActivity {
         editPassword = findViewById(R.id.editTextPassword);
         passwordCheck=findViewById(R.id.editTextPasswordCheck);
         editEmail = findViewById(R.id.editTextEmail);
+        textView=findViewById(R.id.textView);
 
 
-        String name = editName.getText().toString();
+        String login = editName.getText().toString();
         String password = editPassword.getText().toString();
         String password2=passwordCheck.getText().toString();
         String email = editEmail.getText().toString();
-        CharSequence chars=email;
-        PersonData data =new PersonData();
-        data.isEmailValid(chars);
+
+        User user=new User(login,password,password2,email);
 
         if(!password.equals(password2)){
             AlertDialog.Builder builder = new AlertDialog.Builder(Registration.this);
@@ -53,7 +57,7 @@ public class Registration extends AppCompatActivity {
             alert.show();
 
         }
-        else if(!data.getEmailValid()){
+        else if(!user.isEmailValid(email)){
             AlertDialog.Builder builder = new AlertDialog.Builder(Registration.this);
             builder.setTitle("Оповещение")
                     .setMessage("Проверьте корректность введенного Email")
@@ -68,8 +72,22 @@ public class Registration extends AppCompatActivity {
             alert.show();
         }
         else{
-            Intent intent = new Intent(Registration.this, MenuActivity.class);
-            startActivity(intent);
+            Query queryForRegistration = RetrofitClass.getData().create(Query.class);
+            Call<User> call = queryForRegistration.createAccount(user);
+
+            call.enqueue(new Callback<User>() {
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
+                    if(response.isSuccessful()) {
+                        Log.i("tag", "post submitted to API." + response.code());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
+                    Log.i("tag","Failed"+t.getMessage());
+                }
+            });
 
         }
     }

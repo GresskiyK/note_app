@@ -15,7 +15,7 @@
         android:background="#790E1116"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@id/linear"
+        app:layout_constraintBottom_toTopOf="@id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +41,7 @@
         android:textColor="#FFFFFF"
         android:textSize="30sp"
 
-        app:layout_constraintBottom_toTopOf="@+id/linear"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toStartOf="@+id/imageButton2"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="@+id/toolbar_top" />
@@ -60,64 +60,104 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_bottom"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:paddingStart="26dp"
+        android:paddingBottom="10dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="@+id/constraint"
         app:layout_constraintLeft_toLeftOf="@+id/constraint"
         app:layout_constraintRight_toRightOf="@+id/constraint">
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <RadioButton
+                android:id="@+id/radioButtonrRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="0dp"
+                android:buttonTint="@color/red"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="serif"
+                android:typeface="normal"
+                android:text="Red"
+                android:textColor="@color/red"/>
 
+            <RadioButton
+                android:id="@+id/radioButtonYellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:typeface="normal"
+                android:text="Yellow"
+                android:layout_marginLeft="10dp"
+                android:paddingHorizontal="0dp"
+                android:textColor="@color/yellow"
+                android:buttonTint="@color/yellow"
+                android:layout_weight="1"/>
 
+            <RadioButton
+                android:id="@+id/radioButtonGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:typeface="normal"
+                android:text="Green"
+                android:layout_marginLeft="10dp"
+                android:paddingHorizontal="0dp"
+                android:textColor="@color/green"
+                android:buttonTint="@color/green"
+                android:layout_weight="1" />
+        </RadioGroup>
     </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="match_parent"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@id/toolbar_bottom"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_top">
-
-        <EditText
-            android:id="@+id/editTitle"
+        <LinearLayout
+            android:id="@+id/linearInScroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="14dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/scrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/scrollView">
+            <EditText
+                android:id="@+id/editTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#009E8585"
+                android:hint="Title"
+                android:inputType="textMultiLine"
+                android:textSize="24sp" />
 
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#009E8585"
-            android:hint="Title"
-            android:inputType="textMultiLine"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/editBody"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="14dp"
-            android:backgroundTint="#007C1D1D"
-            android:ems="10"
-            android:hint="Note"
-            android:inputType="textMultiLine" />
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        app:srcCompat="@drawable/three_dots"
-        android:onClick="openBottomSheet"
-        android:paddingBottom="14dp"
-        android:paddingRight="12dp"
-        android:paddingLeft="8dp"
-        app:layout_constraintTop_toTopOf="@id/toolbar_bottom"
-        app:layout_constraintBottom_toBottomOf="@id/toolbar_bottom"
-        app:layout_constraintRight_toRightOf="@id/toolbar_bottom"/>
+            <EditText
+                android:id="@+id/editBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:backgroundTint="#007C1D1D"
+                android:ems="10"
+                android:hint="Note"
+                android:inputType="textMultiLine" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
