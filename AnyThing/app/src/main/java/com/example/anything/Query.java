@@ -10,8 +10,12 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface Query {
-    @GET("/notes")
-    Call<List<Note>> getNotes();
+    @POST("/notes")
+    Call<List<Note>> getNotes(@Body UserAuth userAuth);
     @POST("/addUser")
-    Call<User> createAccount(@Body  User user);
+    Call<String> createAccount(@Body  User user);
+    @POST("/addNote")
+    Call<String> createNote(@Body  Note note);
+    @POST("/userAuth")
+    Call<String> checkUser(@Body  UserAuth userAuth);
 }

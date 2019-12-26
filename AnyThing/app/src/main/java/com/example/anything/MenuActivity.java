@@ -1,6 +1,8 @@
 package com.example.anything;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
@@ -28,15 +30,25 @@ public class MenuActivity extends AppCompatActivity {
     Note note = new Note();
     RecyclerView recyclerView;
     TextView textView;
+    private SharedPreferences sharedPrefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         recyclerView = findViewById(R.id.recyclerView);
         textView=findViewById(R.id.textViewTitle);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sharedPrefs = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String email=sharedPrefs.getString("email","");
+        Log.i("email",email);
+        UserAuth userAuth=new UserAuth(email);
 
         Query queryForNotes = RetrofitClass.getData().create(Query.class);
-        Call<List<Note>> call = queryForNotes.getNotes();
+        Call<List<Note>> call = queryForNotes.getNotes(userAuth);
         call.enqueue(new Callback<List<Note>>() {
             @Override
             public void onResponse(Call<List<Note>> call, Response<List<Note>> response) {
@@ -65,6 +77,7 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     public void moveToCreatingNoteForm(View view) {

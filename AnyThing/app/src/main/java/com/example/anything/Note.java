@@ -17,6 +17,9 @@ public class Note {
     private String body;
     @SerializedName(value="colorId")
     private int colorId;
+    @SerializedName(value="email")
+    private String email;
+
 
 
     public String getTitle() {
@@ -27,17 +30,18 @@ public class Note {
     }
 
 
-    public Note(String title,String body){
+    public Note(String title,String body,String email){
         this.title=title;
         this.body=body;
+        this.email=email;
         //this.colorId=colorId;
     }
 
     public Note(){}
 
-    public void addNote(String title,String body){
-        listOfNotes.add(new Note(title,body));
-    }
+//    public void addNote(String title,String body){
+//        listOfNotes.add(new Note(title,body,email));
+//    }
 
     public void removeNote(int position){
         listOfNotes.remove(position);
@@ -56,5 +60,13 @@ public class Note {
 
     public int getColorId() {
         return colorId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

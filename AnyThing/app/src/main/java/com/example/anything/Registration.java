@@ -3,8 +3,10 @@ package com.example.anything;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,10 +23,13 @@ public class Registration extends AppCompatActivity {
     private EditText editEmail;
     private TextView textView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+
     }
 
     public void buttonGetData(View view) {
@@ -40,7 +45,10 @@ public class Registration extends AppCompatActivity {
         String password2=passwordCheck.getText().toString();
         String email = editEmail.getText().toString();
 
+
+
         User user=new User(login,password,password2,email);
+        final Intent intent=new Intent(this,MainActivity.class);
 
         if(!password.equals(password2)){
             AlertDialog.Builder builder = new AlertDialog.Builder(Registration.this);
@@ -73,18 +81,17 @@ public class Registration extends AppCompatActivity {
         }
         else{
             Query queryForRegistration = RetrofitClass.getData().create(Query.class);
-            Call<User> call = queryForRegistration.createAccount(user);
+            Call<String> call = queryForRegistration.createAccount(user);
 
-            call.enqueue(new Callback<User>() {
+            call.enqueue(new Callback<String>() {
                 @Override
-                public void onResponse(Call<User> call, Response<User> response) {
-                    if(response.isSuccessful()) {
-                        Log.i("tag", "post submitted to API." + response.code());
-                    }
+                public void onResponse(Call<String> call, Response<String> response) {
+                    String res=response.body();
+                    startActivity(intent);
                 }
 
                 @Override
-                public void onFailure(Call<User> call, Throwable t) {
+                public void onFailure(Call<String> call, Throwable t) {
                     Log.i("tag","Failed"+t.getMessage());
                 }
             });

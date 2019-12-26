@@ -3,7 +3,7 @@
     <string name="registration">Registration</string>
     <string name="enter_login">Enter your login</string>
     <string name="enter_password">Enter password</string>
-    <string name="repeat_password">Repeat email</string>
+    <string name="repeat_password">Repeat your password</string>
     <string name="enter_email">Enter email</string>
     <string name="button_registrate">Registrate</string>
     <string name="title_activity_menu">MenuActivity</string>
